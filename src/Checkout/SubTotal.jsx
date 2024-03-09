@@ -1,5 +1,4 @@
 import React from "react";
-import CurrencyFormat from "react-currency-format";
 import { useStateValue } from "./StateProvider";
 import { getBasketTotal } from "./Reducer";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
@@ -24,25 +23,17 @@ const SubTotal = () => {
         </div>
       </div>
 
-      <CurrencyFormat
-        renderText={(value) => (
-          <div className="my-2 ">
-            <div className="text-lg">
-              Subtotal ({basket.length} items):
-              <strong>{value}</strong>
-            </div>
-            <small className="flex items-center ">
-              <input type="checkbox" className="mt-1 mr-1" />
-              This order contains a gift
-            </small>
-          </div>
-        )}
-        decimalScale={2}
-        value={getBasketTotal(basket)}
-        displayType={"text"}
-        thousandSeparator={true}
-        prefix={" ₹"}
-      />
+      <div className="my-2 ">
+        <div className="text-lg">
+          Subtotal ({basket.length} items):
+          <strong>₹{getBasketTotal(basket).toFixed(2)}</strong>
+        </div>
+        <small className="flex items-center ">
+          <input type="checkbox" className="mt-1 mr-1" />
+          This order contains a gift
+        </small>
+      </div>
+
       {basket.length > 0 ? (
         <button
           className="rounded-xl  bg-[#FFD814] hover:bg-[#f7ca00] p-1 border my-3 text-center px-6 pb-2 border-[#FCD200] shadow-md"
