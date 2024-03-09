@@ -1,11 +1,11 @@
 {
-  "homepage": "https://Ashwoq.github.io/tuutorial/",
+  "homepage": "https://Ashwoq.github.io/AmazonClone/",
   "name": "amazonclone",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predeploygit": "npm rum build",
+    "predeploygit": "npm run build",
     "deploygit": "gh-pages -d build",
     "dev": "vite",
     "build": "vite build",
